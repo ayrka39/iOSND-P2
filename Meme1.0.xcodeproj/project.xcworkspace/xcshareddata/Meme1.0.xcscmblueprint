@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5266745D441ABE9D258FDD79FE3E6D2AA726455B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5266745D441ABE9D258FDD79FE3E6D2AA726455B" : 0,
+    "DE7B7CF1ABE33184C50ED02EBEA19C1BE96DAD79" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8373A642-2784-47AC-BEB0-3CDED6484D07",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5266745D441ABE9D258FDD79FE3E6D2AA726455B" : "Meme1.0\/",
+    "DE7B7CF1ABE33184C50ED02EBEA19C1BE96DAD79" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Meme1.0",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Meme1.0.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ayrka39\/iOSND-P2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5266745D441ABE9D258FDD79FE3E6D2AA726455B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ayrak39\/iOSND-P2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DE7B7CF1ABE33184C50ED02EBEA19C1BE96DAD79"
+    }
+  ]
+}

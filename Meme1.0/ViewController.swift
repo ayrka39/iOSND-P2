@@ -31,21 +31,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
    
-        topTextField.text = "TOP"
-        topTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.textAlignment = .Center
-        topTextField.backgroundColor = UIColor.clearColor()
-        topTextField.delegate = self
+        setupTextField(topTextField, text: "TOP")
+        setupTextField(bottomTextField, text: "BOTTOM")
 
-        
-        bottomTextField.text = "BOTTOM"
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.textAlignment = .Center
-        bottomTextField.backgroundColor = UIColor.clearColor()
-        bottomTextField.delegate = self
-        
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -64,19 +52,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
         
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        self.presentViewController(pickerController, animated: true, completion: nil)
-        
+        pickAnImage(.PhotoLibrary)
     }
     
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
         
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        pickAnImage(.Camera)
     }
     
     @IBAction func share(sender: AnyObject) {
@@ -85,6 +66,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func memeCancelled(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func setupTextField(textField: UITextField, text: String) {
+        textField.text = text
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .Center
+        textField.backgroundColor = UIColor.clearColor()
+        textField.delegate = self
+    }
+    
+    func pickAnImage(sourceType: UIImagePickerControllerSourceType) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        self.presentViewController(picker, animated: true, completion: nil)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -125,9 +120,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func keyboardWillShow(notification: NSNotification) -> Void {
         if bottomTextField.isFirstResponder() {
-            self.view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y -= getKeyboardHeight(notification)
         } else if topTextField.isFirstResponder() {
-            self.view.frame.origin.y = 0
+            view.frame.origin.y = 0
         }
     }
     
@@ -139,7 +134,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func keyboardWillHide(notification: NSNotification) {
         if bottomTextField.isFirstResponder() {
-            self.view.frame.origin.y = 0
+            view.frame.origin.y = 0
         }
     }
     
