@@ -28,6 +28,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSStrokeWidthAttributeName: -1.3
     ]
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
    
@@ -79,6 +81,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func pickAnImage(sourceType: UIImagePickerControllerSourceType) {
         let picker = UIImagePickerController()
         picker.delegate = self
+        picker.sourceType = sourceType
         self.presentViewController(picker, animated: true, completion: nil)
     }
     
@@ -161,7 +164,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func shareAMemedImage(image: UIImage) {
-        let memedImage = generateMemedImage()
+        memedImage = image
         let ActivityVC = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         ActivityVC.completionWithItemsHandler = {
             activity, completed, items, error in
